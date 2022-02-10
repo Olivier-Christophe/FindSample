@@ -1,0 +1,28 @@
+<nb-layout>
+    <nb-layout-column>
+        <nb-card *ngIf="liste" status='success'>
+            <nb-card-header>
+                <input nbInput [(ngModel)]="search">
+                <button nbButton (click)="loadItems()" [disabled]="isLoading">Chercher</button><span> {{result}} résultats!</span>
+            </nb-card-header>
+            <nb-card-body>
+                <div class="lds-facebook" *ngIf="isLoading"><div></div><div></div><div></div></div>
+                <nb-list *ngIf="!isLoading">
+                    <nb-list-item *ngFor="let s of liste.results">
+                        <a (click)="select(s.id)" style="cursor: pointer;"> {{s.name|titlecase}}</a>
+                    </nb-list-item>
+                </nb-list>
+            </nb-card-body>
+            <nb-card-footer>
+                
+                 <button [disabled]="!liste?.previous"nbButton (click)="clickPrevious()">Précédant</button>
+                <button [disabled]="!liste?.next" nbButton (click)="clickNext()">Suivant</button> 
+                
+            </nb-card-footer>
+        </nb-card>
+    </nb-layout-column>
+    <nb-layout-column>
+        <app-sound-detail [model]="details"></app-sound-detail>
+    </nb-layout-column>
+</nb-layout>
+    

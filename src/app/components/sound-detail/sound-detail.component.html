@@ -1,0 +1,16 @@
+<nb-card status ="info" *ngIf="model">
+    <nb-card-header>
+       <h2> {{model.name|uppercase}}</h2>
+   </nb-card-header>
+   <nb-card-body>
+        <img [src]="model.images.waveform_l">
+        <audio controls #audio>
+            <source [src]="model.previews['preview-hq-mp3']">
+        </audio>
+       
+   </nb-card-body>
+    
+   
+   
+   
+   </nb-card>

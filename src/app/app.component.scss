@@ -1,0 +1,114 @@
+h1{font-family: 'The Nautigal', cursive;
+	color: rgba(0, 255, 0, 0.37);
+
+	font-size: 240px;
+	
+	font-weight: 900;
+	
+}
+@keyframes ligne
+{
+	0% {width:0%;}
+	45% {width:100%;}
+	55%{width:100%;
+	opacity:1;}
+	100%{width:100%;
+	opacity:0;
+	}
+}
+
+
+@keyframes blocHt
+{
+	from{top:30px;}
+	to {top:-50%;}
+}
+
+@keyframes blocbas
+{
+	from{bottom:30px;}
+	to {bottom:-50%;}
+}
+
+
+@keyframes efface
+{
+	from{background: #0a0f33;}
+	to {background: transparent;}
+}
+
+@keyframes monte
+{
+	from{margin-top: 45%;}
+	to {margin-top:2%;}
+}
+
+body,html{height:100%;min-height:100%;overflow:hidden;}
+
+body{margin:0;}
+
+
+header h1{
+	position:relative;
+	z-index:5;
+	margin-top:0;
+	animation-name:monte;
+	animation-duration:4s;
+	animation-delay:6s;
+	animation-fill-mode:forwards;
+	
+}	
+
+hr{
+	height:4px;
+	position:relative;
+	top:50%;
+	margin:0; 
+	background:black; 
+	z-index:3; 
+	border:none;
+	animation: ligne 5s;
+	animation-fill-mode:forwards;
+}
+
+#ciel{
+	z-index:1;
+	position:absolute;
+	top:0;
+	width:100%;
+	height:100%;
+
+	background: #0a0f33;
+
+	animation-name:efface;
+	animation-duration:4s;
+	animation-delay:12s;
+	animation-fill-mode:forwards;
+
+
+	}
+
+#haut{
+	z-index:2;
+	background:white;
+	height:50%;
+	width:80%;
+	position:absolute;
+	top:0;
+	animation-name:blocHt;
+	animation-duration:4s;
+	animation-delay:4s;
+	animation-fill-mode:forwards;}
+
+
+	#bas{z-index:2;
+	background:white;
+	height:50%;
+	width:80%;
+	position:absolute;
+	bottom:0;
+	animation-name:blocbas;
+    animation-duration:4s;
+	animation-delay:4s;
+	animation-fill-mode:forwards;
+}
